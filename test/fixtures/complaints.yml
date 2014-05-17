@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  provoke: MyString
+  quality: MyString
+  radiation: MyString
+  severity: 1
+  time: MyString
+  note: MyString
+
+two:
+  provoke: MyString
+  quality: MyString
+  radiation: MyString
+  severity: 1
+  time: MyString
+  note: MyString

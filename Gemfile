@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.0.0'
+ruby '2.1.1'
 gem 'rails', '4.0.2'
 gem 'sqlite3'
 gem 'sass-rails', '~> 4.0.0'
@@ -13,6 +13,7 @@ gem 'figaro'
 gem 'foundation-rails'
 gem 'simple_form'
 gem 'thin'
+gem 'simple_token_authentication'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]

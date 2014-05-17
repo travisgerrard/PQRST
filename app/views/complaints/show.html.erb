@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Provoke:</strong>
+  <%= @complaint.provoke %>
+</p>
+
+<p>
+  <strong>Quality:</strong>
+  <%= @complaint.quality %>
+</p>
+
+<%= link_to 'Edit', edit_complaint_path(@complaint) %> |
+<%= link_to 'Back', complaints_path %>

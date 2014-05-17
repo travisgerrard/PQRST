@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140213132936) do
+ActiveRecord::Schema.define(version: 20140425173744) do
+
+  create_table "complaints", force: true do |t|
+    t.string   "provoke"
+    t.string   "quality"
+    t.string   "radiation"
+    t.integer  "severity"
+    t.string   "time"
+    t.string   "note"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -27,8 +39,10 @@ ActiveRecord::Schema.define(version: 20140213132936) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
+    t.string   "authentication_token"
   end
 
+  add_index "users", ["authentication_token"], name: "index_users_on_authentication_token"
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 

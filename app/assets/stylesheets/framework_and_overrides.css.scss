@@ -21,8 +21,20 @@
   @extend .columns;
   @extend .text-center;
   }
+@mixin form-input-formatting {
+  @extend .large-6; 
+  @extend .large-centered; 
+  @extend .small-6;
+  @extend .small-centered; 
+  @extend .columns;
+  }
 // create your own classes
 // to make views framework-neutral
+
+.pqrstForm {
+  @include form-input-formatting;
+}
+
 .column {
   @include six-columns-centered;
   }
@@ -85,3 +97,4 @@ section {
   font-size: rem-calc(16);
   color: white;
 }
+
