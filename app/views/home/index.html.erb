@@ -3,6 +3,8 @@
 	<h3>Pain Tracker</h3>
 </div>
 
+<% if signed_in? %>
+
 <section>
 	<%= simple_form_for @complaint do |f| %>
 		<%= f.error_notification %>
@@ -32,3 +34,4 @@
 		</div>
 	<% end %>
 </section>
+<% end %>
