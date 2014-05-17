@@ -1,5 +1,6 @@
 module V1
 class McomplaintsController < ApplicationController
+	acts_as_token_authentication_handler_for User
 	#before_action :user_signed_in?
 	before_action :verify_authenticity_token
 	skip_before_action :verify_authenticity_token
