@@ -34,4 +34,5 @@ class SessionsController < Devise::SessionsController
   def invalid_login_attempt
     render :json=> {:success=>false, :message=>"Error with your login or password"}, :status=>401
   end
+
 end

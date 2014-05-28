@@ -1,5 +1,6 @@
 class ComplaintsController < ApplicationController
 before_action :set_complaint, only: [:show, :edit, :update, :destroy]
+before_action :authenticate_user!, :except => :create
 
 	def index
 		@complaints = current_user.complaints.all
@@ -16,12 +17,20 @@ before_action :set_complaint, only: [:show, :edit, :update, :destroy]
   	end
 	
 	def create
-		@complaint = current_user.complaints.build(complaint_params)
-		if @complaint.save
-			flash[:success] = "Complaint created..."
-			redirect_to @complaint
+		if current_user.nil?
+ 			# Store the form data in the session so we can retrieve it after login
+			session[:complaint] = complaint_params
+ 			# Redirect the user to register/login
+			redirect_to new_user_session_path
 		else
-			render action: 'new'
+		#if user_signed_in?
+			@complaint = current_user.complaints.build(complaint_params)
+			if @complaint.save
+				flash[:success] = "Complaint created..."
+				redirect_to complaints_url
+			else
+				render action: 'new'
+			end
 		end
 	end
 

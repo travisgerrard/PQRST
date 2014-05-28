@@ -22,3 +22,4 @@ end
 
   resources :users
 end
+

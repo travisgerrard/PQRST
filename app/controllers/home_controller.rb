@@ -3,4 +3,5 @@ class HomeController < ApplicationController
     	@users = User.all
     	@complaint = Complaint.new
   end
+
 end
