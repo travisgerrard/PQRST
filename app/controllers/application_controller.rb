@@ -4,9 +4,9 @@ class ApplicationController < ActionController::Base
 protect_from_forgery with: :null_session, if: Proc.new { |c| c.request.format == 'application/json' }
   #acts_as_token_authentication_handler_for User
 
-
+#Looks at what to do after sign in
 def after_sign_in_path_for(resource)
- 
+
  # save list if there is a temp_list in the session
  if session[:complaint].present?
  

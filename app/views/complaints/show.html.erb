@@ -10,5 +10,20 @@
   <%= @complaint.quality %>
 </p>
 
+<p>
+  <strong>Radiation:</strong>
+  <%= @complaint.radiation %>
+</p>
+
+<p>
+  <strong>Severity:</strong>
+  <%= @complaint.severity %>
+</p>
+
+<p>
+  <strong>Timing:</strong>
+  <%= @complaint.time %>
+</p>
+
 <%= link_to 'Edit', edit_complaint_path(@complaint) %> |
 <%= link_to 'Back', complaints_path %>

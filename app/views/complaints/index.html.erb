@@ -1,4 +1,4 @@
-<h1>Listing zombies</h1>
+<h1>Listing complaints</h1>
 
 <table>
   <thead>
@@ -6,6 +6,8 @@
       <th>Provoke</th>
       <th>Quality</th>
       <th>Radiation</th>
+      <th>Severity</th>
+      <th>Timing</th>
       <th colspan="3"></th>    </tr>
   </thead>
 
@@ -15,6 +17,8 @@
         <td><%= complaint.provoke %></td>
         <td><%= complaint.quality %></td>
         <td><%= complaint.radiation %></td>
+        <td><%= complaint.severity %></td>
+        <td><%= complaint.time %></td>
         <td><%= link_to 'Show', complaint %></td>
         <td><%= link_to 'Edit', edit_complaint_path(complaint) %></td>
         <td><%= link_to 'Destroy', complaint, method: :delete, data: { confirm: 'Are you sure?' } %></td>

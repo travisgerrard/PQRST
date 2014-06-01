@@ -51,12 +51,12 @@
 // apply styles to HTML elements
 // to make views framework-neutral
 main {
+  padding: 0 0 0 0;
   @include twelve-columns;
-  background-color: #eee;
   }
 section {
   @extend .row;
-  margin-top: 20px;
+  margin-top: 0;
   }
 
 // Styles for Devise views

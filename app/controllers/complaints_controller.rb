@@ -17,6 +17,7 @@ before_action :authenticate_user!, :except => :create
   	end
 	
 	def create
+		#if user is not signed in
 		if current_user.nil?
  			# Store the form data in the session so we can retrieve it after login
 			session[:complaint] = complaint_params
