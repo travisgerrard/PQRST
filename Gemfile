@@ -14,6 +14,9 @@ gem 'simple_form'
 gem 'thin'
 gem 'simple_token_authentication'
 
+gem 'jquery-ui-rails'
+gem 'foundation-icons-sass-rails'
+
 group :development, :test do
   gem 'sqlite3'
   gem 'better_errors'

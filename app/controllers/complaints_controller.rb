@@ -58,7 +58,7 @@ before_action :authenticate_user!, :except => :create
     	end
 
 		def complaint_params
-			params.require(:complaint).permit(:provoke, :quality, :radiation, :severity, :time, :note)
+			params.require(:complaint).permit(:provoke, :quality, :radiation, :severity, :time, :note, :complaint_type, :onset)
 		end
 
 end

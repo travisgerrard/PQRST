@@ -3,6 +3,8 @@
 <table>
   <thead>
     <tr>
+      <th>Type</th>
+      <th>Onset</th>
       <th>Provoke</th>
       <th>Quality</th>
       <th>Radiation</th>
@@ -14,6 +16,8 @@
   <tbody>
     <% @complaints.each do |complaint| %>
       <tr>
+        <td><%= complaint.complaint_type %></td>
+        <td><%= complaint.onset %></td>
         <td><%= complaint.provoke %></td>
         <td><%= complaint.quality %></td>
         <td><%= complaint.radiation %></td>
