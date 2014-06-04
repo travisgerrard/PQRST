@@ -16,6 +16,7 @@ gem 'simple_token_authentication'
 
 gem 'jquery-ui-rails'
 gem 'foundation-icons-sass-rails'
+gem 'jquery-turbolinks'
 
 group :development, :test do
   gem 'sqlite3'

@@ -229,7 +229,7 @@ $.fcdp = {
 				var tp =cal.find('.time-picker');
 				var dp = cal.find('.date-picker');
 				var ds = cal.find('.date-selector');
-				dp.css({ top: ds.position().top + ds.outerHeight(), left: ds.position().left });
+				dp.css({ top: ds.position().bottom + ds.outerHeight(), left: ds.position().left });
 				tp.hide();
 				dp.toggle();
 			});
@@ -242,7 +242,7 @@ $.fcdp = {
 				var dp = cal.find('.date-picker');
 				var tp = cal.find('.time-picker');
 				var ts = cal.find('.time-selector');
-				tp.css({ top: ts.position().top + ts.outerHeight(), right: ts.position().right });				
+				tp.css({ top: ts.position().bottom + ts.outerHeight(), right: ts.position().right });				
 				dp.hide();
 				tp.toggle();
 			});
