@@ -12,44 +12,57 @@
   <% end %>
 
 <%= simple_form_for @complaint do |f| %>
+  <%= simple_form_for @complaint do |f| %>
     <%= f.error_notification %>
 
-    <div class="large-12 columns">
-    <%= f.input :complaint_type, label: false, as: :text, :placeholder => "What is this?", input_html: { class: ''} %>
+    <div class="row">
+    <div class="large-4 medium-4 columns">
+    <%= f.input :complaint_type, as: :text, :placeholder => "Are you having pain, headache, or feeling sick?", input_html: { class: ''} %>
 
     </div>
 
+    <div class="large-8 medium-8 columns">
+      <label class="text optional control-label" for="complaint_onset">Onset</label>
+      <input type="text" data-date-time="" id="complaint_onset" name="complaint[onset]" label="Onset" />
 
-    <div class="large-3 columns">
-    <%= f.input :provoke, label: false, as: :text, :placeholder => "What provoked it?", input_html: { class: ''} %>
+    </div> 
+    </div>
+    <br>
+
+    <div class="row">
+    <div class="large-3 medium-3 columns">
+    <label class="text optional control-label" for="complaint_provoke">Provocation or Palliate</label>
+    <textarea type="text optional" id="complaint_provoke" name="complaint[provoke]" placeholder="What makes it worse or better?"></textarea>
+    <%-# data-tooltip class="has-tip" title="P is for provoke: Is there any movement, pressure or other external factor that makes the problem worse">-%>
     </div>
 
-    <div class="large-3 columns">
-    <%= f.input :quality, label: false, as: :text, :placeholder => "What's its quality?", input_html: { class: ''} %>
+    <div class="large-3 medium-3 columns">
+    <%= f.input :quality,  as: :text, :placeholder => "What's its quality?", input_html: { class: ''} %>
     </div>
 
-    <div class="large-3 columns">
-    <%= f.input :radiation, label: false, as: :text, :placeholder => "Does it radiate anywhere?", input_html: { class: ''} %>
+    <div class="large-3 medium-3 columns">
+    <label class="text optional control-label" for="complaint_radiation">Region and Radiation</label>
+    <textarea type="text optional" id="complaint_radiation" name="complaint[radiation]" placeholder="What's its region and does it radiate anywhere?"></textarea>
     </div>
 
-    <div class="large-3 columns">
-    <%= f.input :time, label: false, as: :text, :placeholder => "Have you noticed any patterns in it's timing?", input_html: { class: ''} %>
+    <div class="large-3 medium-3 columns">
+    <label class="text optional control-label" for="complaint_time">Time (history)</label>
+    <textarea type="text optional" id="complaint_time" name="complaint[time]" placeholder="Have you noticed any patterns in it's timing?" ></textarea>
+    </div>
+    </div>
     </div>
 
-    <div class="large-3 large-centered columns">
+    <div class="row">
+    <div class="large-3 medium-3 large-centered medium-centered columns">
     <%= f.input :severity, label: "What it's severity?", :placeholder => "What's the severity of your pain?", collection: 1..10 %>
     </div>
-
-
-    <div class="large-12 columns">
-
-      <input type="text" data-date-time="" id="complaint_onset" name="complaint[onset]" />
-
     </div>
 
     <div class="large-centered small-centered text-center columns">
-    <%= f.button :submit, "Record Pain" ,:class => "submit"  %>
+    <%= f.button :submit, "Record" ,:class => "submit"  %>
     </div>
+
+  <% end %>
 
   <% end %>
 

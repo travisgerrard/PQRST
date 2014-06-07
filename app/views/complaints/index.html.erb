@@ -1,38 +1,52 @@
 <h1>Listing complaints</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Onset</th>
-      <th>Provoke</th>
-      <th>Quality</th>
-      <th>Radiation</th>
-      <th>Severity</th>
-      <th>Timing</th>
-      <th colspan="3"></th>    </tr>
-  </thead>
 
-  <tbody>
-    <% @complaints.each do |complaint| %>
-      <tr>
-        <td><%= complaint.complaint_type %></td>
-        <td><%= complaint.onset %></td>
-        <td><%= complaint.provoke %></td>
-        <td><%= complaint.quality %></td>
-        <td><%= complaint.radiation %></td>
-        <td><%= complaint.severity %></td>
-        <td><%= complaint.time %></td>
+
+<% @complaints.each do |complaint| %>
+<table style="float: left;margin-left:4px;margin-right:4px;">
+<td>
+<table>
+<tr>
+  <td></td>
+  <td><%= complaint.complaint_type %></td> 
+</tr>
+<tr>
+  <td>O</td>
+  <td><%= complaint.onset.strftime("%Y-%m-%d %H:%M") %></td> 
+</tr>
+<tr>
+  <td>P</td>
+  <td><%= complaint.provoke %></td> 
+</tr>
+<tr>
+  <td>Q</td>
+  <td><%= complaint.quality %></td> 
+</tr>
+<tr>
+  <td>R</td>
+  <td><%= complaint.radiation %></td> 
+</tr>
+<tr>
+  <td>S</td>
+  <td><%= complaint.severity %></td> 
+</tr>
+<tr>
+  <td>T</td>
+  <td><%= complaint.time %></td> 
+</tr>
+</td>
+<table>
         <td><%= link_to 'Show', complaint %></td>
         <td><%= link_to 'Edit', edit_complaint_path(complaint) %></td>
         <td><%= link_to 'Destroy', complaint, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+</table>
+</table>
 </table>
 
-<br>
+<% end %>
 
+<div style="clear: both"></div>
 
-
-<%= link_to 'New Complaint', new_complaint_path %>
+<table style="margin-left:4px">
+<td><%= link_to 'New Complaint', new_complaint_path %></td>
+</table>
