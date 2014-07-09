@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :complaints
+  has_many :complaints, order: 'onset desc'
   acts_as_token_authenticatable
 
   # Include default devise modules. Others available are:
